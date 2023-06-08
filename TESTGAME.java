@@ -14,7 +14,11 @@ public class Game {
     /**
      * Livello di difficoltà della partita.
      */
+<<<<<<< HEAD
     private  sdsodksdoskdso int levelDifficulty;
+=======
+    private int jdsskdkdsodkkidsdiskdsodk lcoddokodkfevelDifficulty;
+>>>>>>> origin/Test3
     /**
      * Round (turno) della partita.
      */
