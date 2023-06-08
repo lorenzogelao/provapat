@@ -59,6 +59,18 @@ public class Game {
      * Numero di tentativi massimo in difficoltà difficile.
      */
     public static final int HARD_ATTEMPTS = 10;
+    /**
+     * Grandezza griglia standard.
+     */
+    public static final int STANDARD_GRID_SIZE = 10;
+    /**
+     * Grandezza griglia large.
+     */
+    public static final int LARGE_GRID_SIZE = 18;
+    /**
+     * Grandezza griglia extralarge.
+     */
+    public static final int EXTRALARGE_GRID_SIZE = 26;
 
     /**
      * Costruttore che inizializza {@link #round}, {@link #inGame}, e imposta
@@ -328,7 +340,6 @@ public class Game {
             setInGame(true);
             Grid userGrid = new Grid();     // griglia dell'utente
             Grid gridToHit = new Grid();    // griglia con le navi da colpire
-            gridToHit.ensureRandomFill();   // riempie casualmente la griglia con le navi
             String command;                 // comando inserito dall'utente
             String[] splitted;              // comando diviso in due parti
 
