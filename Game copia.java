@@ -202,6 +202,32 @@ public class Game {
             System.out.println("Hai già scelto un livello di difficoltà");
         }
     }
+    /**
+     * Metodo che imposta la grandezza della griglia in base alla scelta del giocatore. 
+     */
+    public void choseGridSize( Grid gridtoHit){
+        String command;
+        
+
+        do {
+            command = App.getInput();
+            switch(command){
+                case "/default" -> {
+                    gridtoHit.setGridSize(STANDARD_GRID_SIZE);
+                    gridtoHit.ensureRandomFill();
+                    }
+                case "/large" -> {
+                    gridtoHit.setGridSize(LARGE_GRID_SIZE);
+                    gridtoHit.ensureRandomFill();
+                }
+                case "/extralarge" -> {
+                    gridtoHit.setGridSize(EXTRALARGE_GRID_SIZE);
+                    gridtoHit.ensureRandomFill();  
+                }
+                default -> System.out.println("Comando non valido");
+            }
+        } while(!command.equals("/default") && !command.equals("/large") && !command.equals("/extralarge"));
+    }
 
     /**
      * Mostra a video la descrizione del gioco e una lista di comandi.
