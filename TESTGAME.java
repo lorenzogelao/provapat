@@ -14,7 +14,11 @@ public class Game {
     /**
      * Livello di difficoltà della partita.
      */
-    private int levelDifficulty;
+<<<<<<< HEAD
+    private  sdsodksdoskdso int levelDifficulty;
+=======
+    private int jdsskdkdsodkkidsdiskdsodk lcoddokodkfevelDifficulty;
+>>>>>>> origin/Test3
     /**
      * Round (turno) della partita.
      */
@@ -59,6 +63,18 @@ public class Game {
      * Numero di tentativi massimo in difficoltà difficile.
      */
     public static final int HARD_ATTEMPTS = 10;
+    /**
+     * Grandezza griglia standard.
+     */
+    public static final int STANDARD_GRID_SIZE = 10;
+    /**
+     * Grandezza griglia large.
+     */
+    public static final int LARGE_GRID_SIZE = 18;
+    /**
+     * Grandezza griglia extralarge.
+     */
+    public static final int EXTRALARGE_GRID_SIZE = 26;
 
     /**
      * Costruttore che inizializza {@link #round}, {@link #inGame}, e imposta
@@ -189,6 +205,33 @@ public class Game {
         } else {
             System.out.println("Hai già scelto un livello di difficoltà");
         }
+    }
+
+    /**
+     * Metodo che imposta la grandezza della griglia in base alla scelta del giocatore. 
+     */
+    public void choseGridSize( Grid gridtoHit){
+        String command;
+        
+
+        do {
+            command = App.getInput();
+            switch(command){
+                case "/default" -> {
+                    gridtoHit.setGridSize(STANDARD_GRID_SIZE);
+                    gridtoHit.ensureRandomFill();
+                    }
+                case "/large" -> {
+                    gridtoHit.setGridSize(LARGE_GRID_SIZE);
+                    gridtoHit.ensureRandomFill();
+                }
+                case "/extralarge" -> {
+                    gridtoHit.setGridSize(EXTRALARGE_GRID_SIZE);
+                    gridtoHit.ensureRandomFill();  
+                }
+                default -> System.out.println("Comando non valido");
+            }
+        } while(!command.equals("/default") && !command.equals("/large") && !command.equals("/extralarge"));
     }
 
     /**
@@ -340,8 +383,8 @@ public class Game {
                 chooseDifficulty();
             } while (!levelIsSet());
 
-            //System.out.println("Seleziona la taglia della griglia: ");
-            //choseGridSize(gridToHit);
+            System.out.println("Seleziona la taglia della griglia: ");
+            choseGridSize(gridToHit);
 
             do {
                 command = App.getInput();
