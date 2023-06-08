@@ -14,7 +14,7 @@ public class Game {
     /**
      * Livello di difficoltà della partita.
      */
-    private int jdsskdkdsodk levelDifficulty;
+    private int jdsskdkdsodkkidsdiskdsodk levelDifficulty;
     /**
      * Round (turno) della partita.
      */
